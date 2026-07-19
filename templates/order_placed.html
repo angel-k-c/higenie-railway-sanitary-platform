@@ -1,0 +1,23 @@
+$subject = "Your Hi.Genie Order #$order_id is Confirmed";
+$body = '
+<html>
+<body style="font-family:Arial,sans-serif;background:#f4f6f8;padding:0;margin:0;">
+  <div style="max-width:600px;margin:auto;background:#fff;border-radius:8px;overflow:hidden;">
+    <div style="background:#007bff;color:#fff;text-align:center;padding:15px 0;">
+      <h2 style="margin:0;">Hi.Genie</h2>
+      <p style="margin:0;font-size:14px;">Freshness on Track</p>
+    </div>
+    <div style="padding:20px;color:#333;">
+      <h3>Order Confirmed!</h3>
+      <p>Dear <b>'.$customer_name.'</b>, your order <b>#'.$order_id.'</b> has been received and confirmed.</p>
+      <p>Train No: <b>'.$pnr.'</b><br>Station: <b>'.$station.'</b></p>
+      <p>We’ll notify you once your order is out for delivery.</p>
+      <a href="http://localhost/higenie/track_order.php?order_id='.$order_id.'" style="display:inline-block;background:#007bff;color:#fff;padding:10px 20px;text-decoration:none;border-radius:4px;">Track Order</a>
+    </div>
+    <div style="background:#f1f1f1;text-align:center;padding:10px;font-size:12px;color:#555;">
+      © '.date('Y').' Hi.Genie. All Rights Reserved.
+    </div>
+  </div>
+</body>
+</html>';
+sendMail($customer_email, $subject, $body);

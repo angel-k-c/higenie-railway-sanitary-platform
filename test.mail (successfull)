@@ -1,0 +1,9 @@
+<?php
+require __DIR__ . '/includes/mailer.php';
+
+if (sendMail('angelkc3457@gmail.com', 'Test from Hi.Genie', '<h3>Hello!</h3><p>Mailer test successful.</p>')) {
+    echo "Mail sent successfully.";
+} else {
+    echo "Mail failed.";
+}
+?>

@@ -1,0 +1,24 @@
+$subject = "Your Hi.Genie Order #$order_id Delivered Successfully";
+$body = '
+<html>
+<body style="font-family:Arial,sans-serif;background:#f4f6f8;margin:0;padding:0;">
+  <div style="max-width:600px;margin:auto;background:#fff;border-radius:8px;overflow:hidden;">
+    <div style="background:#c0392b;color:#fff;text-align:center;padding:15px 0;">
+      <img src="http://localhost/higenie/assets/img/logo.png" alt="Hi.Genie" style="height:40px;">
+      <p style="margin:0;font-size:14px;">Freshness on Track</p>
+    </div>
+    <div style="padding:20px;color:#333;">
+      <h2>Thank You, '.$customer_name.'!</h2>
+      <p>Your order <b>#'.$order_id.'</b> has been delivered successfully.</p>
+      <p>We hope you’re satisfied with your purchase.</p>
+      <a href="http://localhost/higenie/feedback.php?order_id='.$order_id.'" style="display:inline-block;background:#c0392b;color:#fff;padding:10px 20px;text-decoration:none;border-radius:4px;">Give Feedback</a>
+      <p style="margin-top:15px;">Shop again for your next journey.</p>
+      <a href="http://localhost/higenie/shop.php" style="display:inline-block;background:#2ecc71;color:#fff;padding:10px 20px;text-decoration:none;border-radius:4px;">Shop More</a>
+    </div>
+    <div style="background:#f1f1f1;text-align:center;padding:10px;font-size:12px;color:#555;">
+      © '.date('Y').' Hi.Genie. All Rights Reserved.
+    </div>
+  </div>
+</body>
+</html>';
+sendMail($customer_email, $subject, $body);

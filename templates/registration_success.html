@@ -1,0 +1,22 @@
+$subject = "Welcome to Hi.Genie – Registration Successful";
+$body = '
+<html>
+<body style="font-family:Arial,sans-serif;background:#f4f6f8;padding:0;margin:0;">
+  <div style="max-width:600px;margin:auto;background:#fff;border-radius:8px;overflow:hidden;">
+    <div style="background:#007bff;color:#fff;text-align:center;padding:15px 0;">
+      <h2 style="margin:0;">Hi.Genie</h2>
+      <p style="margin:0;font-size:14px;">Freshness on Track</p>
+    </div>
+    <div style="padding:20px;color:#333;">
+      <h3>Welcome aboard, '.$name.'!</h3>
+      <p>Your registration is successful. You can now log in and order hygienic essentials delivered right to your train seat.</p>
+      <a href="http://localhost/higenie/login.php" style="display:inline-block;background:#007bff;color:#fff;padding:10px 20px;text-decoration:none;border-radius:4px;">Login Now</a>
+      <p style="margin-top:20px;">We’re glad to have you with us.</p>
+    </div>
+    <div style="background:#f1f1f1;text-align:center;padding:10px;font-size:12px;color:#555;">
+      © '.date('Y').' Hi.Genie. All Rights Reserved.
+    </div>
+  </div>
+</body>
+</html>';
+sendMail($email, $subject, $body);
