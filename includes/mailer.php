@@ -30,14 +30,14 @@ function sendMail($to, $subject, $body) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'hi.genie.service@gmail.com';
-        $mail->Password   = 'wxxznxiediathslc'; 
+        $mail->Username   = getenv('GMAIL_USER') ?: 'hi.genie.service@gmail.com';
+        $mail->Password   = getenv('GMAIL_APP_PASSWORD');
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         $mail->SMTPDebug = 0; 
 
-        $mail->setFrom('hi.genie.service@gmail.com', 'Hi.Genie');
+        $mail->setFrom($mail->Username, 'Hi.Genie');
         $mail->addAddress($to);
 
         $mail->isHTML(true);
